@@ -4,10 +4,6 @@ const formEl = document.querySelector('form');
 const STORAGE_KEY = 'feedback-form-state';
 const formData = {};
 
-formEl.addEventListener('input', throttle(handleFofmElInput, 500));
-formEl.addEventListener('submit', handleFofmElSubmit);
-fillFormEl();
-
 function handleFofmElInput(evt) {
   formData[evt.target.name] = evt.target.value;
 
@@ -34,3 +30,7 @@ function fillFormEl() {
     formEl.message.value = savedData.message;
   }
 }
+
+formEl.addEventListener('input', throttle(handleFofmElInput, 500));
+formEl.addEventListener('submit', handleFofmElSubmit);
+fillFormEl();
