@@ -25,8 +25,10 @@ function handleFofmElSubmit(evt) {
 function fillFormEl() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if (savedData) {
+  if (savedData.email) {
     formEl.email.value = savedData.email;
+  }
+  if (savedData.message) {
     formEl.message.value = savedData.message;
   }
 }
